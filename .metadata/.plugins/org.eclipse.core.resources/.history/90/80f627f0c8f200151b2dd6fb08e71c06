@@ -1,0 +1,25 @@
+package fr.umlv.evaluation;
+
+import com.gtranslate.Language;
+import com.gtranslate.Translator;
+
+public class EvaluationWord {
+	
+
+
+	/**Get the String result of the evaluation
+	  * @param code The code to evaluate
+	  * @return The String result
+	  */
+	public static boolean getEval(String word, String translateWord) {
+
+		Translator translate = Translator.getInstance();
+		return translate.translate(word, Language.FRENCH, Language.ENGLISH) == translateWord;
+	}
+	
+	public static String getTranslateWord(String word){
+		Translator translate = Translator.getInstance();
+		return translate.translate(word, Language.FRENCH, Language.ENGLISH);
+	}
+
+}

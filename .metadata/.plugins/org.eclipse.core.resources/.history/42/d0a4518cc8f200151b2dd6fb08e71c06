@@ -1,0 +1,13 @@
+import com.memetix.mst.language.Language;
+import com.memetix.mst.translate.Translate;
+
+
+public class Test {
+	public static void main(String[] args)throws GoogleAPIException{
+		
+		Translate.setClientId("Quizz");
+		Translate.setClientSecret("J+J+HGyg8/sdmkHMeaLWLMuoXZ6BomKSeoBSH2Den2g=");
+		String text = Translate.execute("manger", Language.FRENCH, Language.ENGLISH);
+		System.out.println(text);
+	}
+}

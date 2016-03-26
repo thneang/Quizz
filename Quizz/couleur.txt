@@ -1,0 +1,10 @@
+orange
+rouge
+bleue
+jaune
+blanc
+noir
+violet
+rose
+marron
+vert

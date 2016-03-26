@@ -1,0 +1,25 @@
+package fr.umlv.evaluation;
+
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
+import com.gtranslate.Language;
+import com.gtranslate.Translator;
+
+public class EvaluationCode {
+	
+	private static Translator translate = Translator.getInstance();
+	String text = translate.translate("manger", Language.FRENCH, Language.ENGLISH);
+	
+
+	/**Get the String result of the evaluation
+	  * @param code The code to evaluate
+	  * @return The String result
+	  */
+	public static boolean getStringEvaluation(String word, String translateWord) {
+
+		
+		return translate.translate(word, Language.FRENCH, Language.ENGLISH) == translateWord;
+	}
+
+}

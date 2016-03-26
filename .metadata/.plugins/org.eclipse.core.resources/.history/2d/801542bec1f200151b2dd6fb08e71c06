@@ -1,0 +1,10 @@
+import com.google.api.translate.Language;
+
+
+public class Test {
+	public static void main(String[] args){
+		Translator translate = Translator.getInstance();
+		String text = translate.translate("manger", Language.FRENCH, Language.ENGLISH);
+		System.out.println(text);
+	}
+}

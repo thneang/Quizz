@@ -1,0 +1,44 @@
+package fr.umlv.exercices.exercice;
+import java.util.List;
+
+public class Exercice {
+	private List<String> words;
+	private final Object lock = new Object();
+
+
+	private String toPartialJSon() {
+		synchronized(this.lock){
+			if (this.words.isEmpty() ){
+				return "";
+
+			}
+			return this.words.stream().map(word -> {return "{\"question\":\"" + word + "\" }";})
+					.reduce("", (x, y) -> x + "," + y).substring(1);
+					
+		}
+	}
+
+
+
+
+
+	Exercice(List<String> words) {
+		this.words = words;  // null already checked in create factory
+
+	}
+
+	/**
+	 * 
+	 * @return The String that represent the Object
+	 */
+	public String toJSon() {
+
+		synchronized(this.lock){
+			return "{\"questions\":["
+					+ toPartialJSon() + "]}";
+		}
+	}
+
+
+
+}

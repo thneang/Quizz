@@ -1,0 +1,12 @@
+import com.memetix.mst.language.Language;
+import com.memetix.mst.translate.Translate;
+
+
+public class Test {
+	public static void main(String[] args)throws GoogleAPIException{
+		
+		
+		String text = Translate.DEFAULT.execute("manger", Language.FRENCH, Language.ENGLISH);
+		System.out.println(text);
+	}
+}
